@@ -11,10 +11,10 @@
       pkgs = import nixpkgs { inherit system; };
     in
     rec {
-      pkgs = {
+      packages = {
         mrustc = pkgs.callPackage ./mrustc { };
         minicargo = pkgs.callPackage ./mrustc/minicargo.nix { };
       };
-      hydraJobs = pkgs;
+      hydraJobs = packages;
     });
 }
