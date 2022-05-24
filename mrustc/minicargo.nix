@@ -1,9 +1,11 @@
 { lib
 , stdenv
 , makeWrapper
-, mrustc
+, callPackage
 }:
+let mrustc = callPackage ./. { };
 
+in
 stdenv.mkDerivation rec {
   pname = "mrustc-minicargo";
   inherit (mrustc) src version;
